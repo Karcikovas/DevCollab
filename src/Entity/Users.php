@@ -56,6 +56,11 @@ class Users
      */
     private $team_fk;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $skills;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +158,18 @@ class Users
     public function setTeamFk(?int $team_fk): self
     {
         $this->team_fk = $team_fk;
+
+        return $this;
+    }
+
+    public function getSkills(): ?int
+    {
+        return $this->skills;
+    }
+
+    public function setSkills(?int $skills): self
+    {
+        $this->skills = $skills;
 
         return $this;
     }
